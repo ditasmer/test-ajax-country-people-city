@@ -1,0 +1,20 @@
+1.- El array de paises y capitales (en formato json lo situamos en un fichero externo)
+
+2. en los dos servicios leemos el fichero externo y lo convertimos a array
+
+------------------------------------------------------------------
+
+3. Confeccionar una documento html con un formulario para recoger pais y capital
+
+4.- Al pulsar 'alta' trasladr el pais/capital al fichero externo:
+	. leer el fichero
+	. pasarlo a array
+	. añadir la nueva relación pais/capital al array
+	. pasar el fichero a json
+	. volverlo a grabar
+
+------------------------------------------------------------------
+
+5.- añadir al documento html una tabla de consulta de todos los pasis/capitales
+
+6.- Añadir el mantenimiento: baja y la modificación de pais/capital
