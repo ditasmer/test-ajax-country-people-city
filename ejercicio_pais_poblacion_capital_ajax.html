@@ -106,8 +106,8 @@
 					//respuesta del servidor
 					console.log(respuesta)
 					//json respuesta a mostrar en los inputs capital y poblacion, atencion primer dato y segundo
-					document.querySelector('#capital').value = respuesta[0]
-					document.querySelector('#poblacion').value = respuesta[1]  
+					document.querySelector('#capital').value = respuesta['capital']
+					document.querySelector('#poblacion').value = respuesta['poblacion']  
 				})
 					
 				 .catch(function(error){

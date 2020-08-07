@@ -1,11 +1,11 @@
 <?php
 //crear array 
 $arrayPaises = array(
-'Francia' => ['París', 60000000],
-'Ecuador' => ['Quito', 40000000],
-'Gran Bretaña' => ['Londres',70000000],
-'Alemania' => ['Berlín',75000000],
-'Argentina' => ['Buenos Aires', 65000000]
+'Francia' => ["capital"=>'París', "poblacion"=>60000000],
+'Ecuador' => ["capital"=>'Quito', "poblacion"=>40000000],
+'Gran Bretaña' => ["capital"=>'Londres', "poblacion"=>70000000],
+'Alemania' => ["capital"=>'Berlín', "poblacion"=>75000000],
+'Argentina' => ["capital"=>'Buenos Aires', "poblacion"=>65000000]
 );
 
 //recupera pais
