@@ -6,7 +6,8 @@
 	<style>
 		form {width: 350px; border:1px solid grey;padding:20px;margin:auto;}
 		label {display: inline-block;width: 100px;}
-		td {border:1px solid lightblue; padding:5px;}
+		td {border:1px solid lightblue; padding:5px; cursor: pointer;}
+		td:hover {background-color: lightblue;}
 		table {margin: auto}
 	</style>
 	<script>
@@ -86,7 +87,8 @@
 		<table id="pais">
 			<!--aqui se incluye dinamicament por id el listado de paises-->
 		</table>
-		<br><br>
+		<br><span>Pulsa un pais para consultar datos</span><br>
+		
 		<label>Capital</label>
 		<input type="text" id='capital' disabled><br>
 		<label>Población</label>
