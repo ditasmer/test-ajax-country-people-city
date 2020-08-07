@@ -15,6 +15,7 @@
 			consultaPaises()
 			
 			//activar evento onclick de la tabla de paises para consultar datos del pais
+			document.getElementById('pais').onclick = consultaPoblacionCapital;
 
 		}
 		function consultaPaises(){
@@ -43,6 +44,13 @@
 				.then(function(respuesta){
 					//respuesta del servidor
 					console.log(respuesta)
+					let trtd = ''
+					for (i in respuesta){
+						trtd += "<tr><td>"+respuesta[i]+"</tr></td>"
+					}
+					
+					//insert trtd en el id pais del HTML
+					document.querySelector('#pais').innerHTML += trtd
 
 				})
 					
@@ -52,12 +60,18 @@
 
 
 		}
+
+		function consultaPoblacionCapital(){
+			alert('consultapoblacapi')
+		}
 	</script>
 </head>
 <body>
 	<form>
 		<label></label>
-		<table id="pais"></table>
+		<table id="pais">
+			<!--aqui se incluye dinamicament por id el listado de paises-->
+		</table>
 		<br><br>
 		<label>Capital</label>
 		<input type="text" id='capital' disabled><br>
