@@ -14,10 +14,14 @@ $arrayPaises = array(
 //extraer paises del array
 $paises = [];
 
+//Opcion 1: recorrer array y recuperar claves
 foreach ($arrayPaises as $key => $value) {
 	//echo $key;
 	array_push($paises, $key);
 }
+
+//Opcion 2: recuperar solo las claves de un array
+//$paises = array_keys($arrayPaises)
 
 //enviar el array paises en formato json
 echo json_encode($paises);
