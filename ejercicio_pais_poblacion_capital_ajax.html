@@ -10,7 +10,48 @@
 		table {margin: auto}
 	</style>
 	<script>
-		
+		window.onload = function() {
+			//consulta servicio 
+			consultaPaises()
+			
+			//activar evento onclick de la tabla de paises para consultar datos del pais
+
+		}
+		function consultaPaises(){
+			alert('consulta pais')
+			//llamada ajax 
+			//definir los parametros de la peticion
+			let parametros = {
+				method:'post'
+			}
+			//servicio
+			let servicio = "server_country.php";
+			// el servicio va a enviar un json solo con las capitales
+			fetch (servicio, parametros)
+				.then(function(acuse) {
+					if (acuse.ok) {
+						//que tipo de respuesta esperamos: text, json. xml, blob En este caso un JSON
+						return acuse.json()
+
+					} else {
+						console.log(acuse)
+						throw("Algo ha ido mal en la petición")
+
+					}			
+				})
+
+				.then(function(respuesta){
+					//respuesta del servidor
+					console.log(respuesta)
+
+				})
+					
+				 .catch(function(error){
+					alert(error);
+				})	
+
+
+		}
 	</script>
 </head>
 <body>
