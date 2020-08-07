@@ -1,4 +1,9 @@
 <?php
+	//evita que se ejecute el servicio desde url
+	if ($_SERVER['REQUEST_METHOD'] == strtoupper('GET')) {
+		die ('ACCESO DENEGADO');
+	}
+
 //crear array 
 $arrayPaises = array(
 'Francia' => ["capital"=>'París', "poblacion"=>60000000],

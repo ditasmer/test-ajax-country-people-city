@@ -1,5 +1,8 @@
 <?php
-//leer file
+//evita que se ejecute el servicio desde url
+	if ($_SERVER['REQUEST_METHOD'] == strtoupper('GET')) {
+		die ('ACCESO DENEGADO');
+	}
 
 
 //crear array 
