@@ -14,12 +14,18 @@
 			//consulta servicio 
 			consultaPaises()
 			
-			//activar evento onclick de la tabla de paises para consultar datos del pais
-			document.getElementById('pais').onclick = consultaPoblacionCapital;
+			//OPCION 3: activar evento onclick de la tabla de paises para consultar datos del pais
+			document.querySelector('#pais').onclick = function(){
+				//ejecutar solo cuando press sobre un td
+				console.log(event.target)
+				if(event.target.nodeName == 'TD'){
+					consultaPoblacionCapital(event.target)
+				}
+			}
 
 		}
 		function consultaPaises(){
-			alert('consulta pais')
+			//alert('consulta pais')
 			//llamada ajax 
 			//definir los parametros de la peticion
 			let parametros = {
@@ -43,7 +49,7 @@
 
 				.then(function(respuesta){
 					//respuesta del servidor
-					console.log(respuesta)
+					//console.log(respuesta)
 					let trtd = ''
 					for (i in respuesta){
 						trtd += "<tr><td>"+respuesta[i]+"</tr></td>"
@@ -51,6 +57,12 @@
 					
 					//insert trtd en el id pais del HTML
 					document.querySelector('#pais').innerHTML += trtd
+
+					/*//OPCION 1: recuperar las etiquetas y activar listener en cada una 
+					let tds = document.querySelectorAll('td')
+					tds.forEach(function(td){
+						td.onclick = consultaPoblacionCapital
+					})*/
 
 				})
 					
@@ -61,8 +73,10 @@
 
 		}
 
-		function consultaPoblacionCapital(){
-			alert('consultapoblacapi')
+		function consultaPoblacionCapital(td){
+			//recoge pais seleccionado
+			let pais = td.innerText
+			alert(pais)
 		}
 	</script>
 </head>
