@@ -1,7 +1,4 @@
 <?php
-//leer file
-
-
 //crear array 
 $arrayPaises = array(
 'Francia' => ['París', 60000000],
@@ -15,7 +12,7 @@ $arrayPaises = array(
 $pais = $_POST['pais'];
 
 //recupera datos
-$datos = $arrayPaises[$pais]
+$datos = $arrayPaises[$pais];
 
 //enviar el array paises en formato json
 echo json_encode($datos);
